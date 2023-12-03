@@ -1,0 +1,14 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <h2>{{ title }}</h2>
+    {% for post in posts %}
+        <hr/>
+        <div>
+            <h2>{{ post.title }}</h2>
+            <h4>{{ post.posted }}</h4>
+            <p>{{ post.description }}</p>
+            <p><a href="{% url 'blogpost' parametr=post.id %}">ЧИТАТЬ ДАЛЕЕ</a></p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <hr/>
+    <div>
+        <h2>
+            Видеоролик 1
+        </h2>
+        <video src="/media/ser.mp4" controls="controls" width="400" height="300" poster="/media/pngwing.com_3.png"></video>
+    </div>
+    <hr/>
+    <div>
+        <h2>
+            Видеоролик 2
+        </h2>
+        <video src="/media/por.mp4" controls="controls" width="400" height="300" poster="/media/bookgirl.png"></video>
+    </div>
+    <hr/>
+    <div>
+        <h2>
+            Видеоролик 3
+        </h2>
+        <video src="/media/real.mp4" controls="controls" width="400" height="300" poster="/media/bookwood.png"></video>
+    </div>
+{% endblock content %}

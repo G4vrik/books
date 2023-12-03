@@ -1,0 +1,100 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    {% if form %}
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="forms">
+                <div class="formName">
+                    <label class="nameLabel">{{ form.name.label }}</label>
+                    <div class="name">{{ form.name }}</div>
+                </div>
+
+                <div class="formEmail">
+                    <label class="emailLabel">{{ form.email.label }}</label>
+                    <div class="email">{{ form.email }}</div>
+                </div>
+
+                <div class="formRate_site">
+                    <label class="rate_siteLabel">{{ form.rate_site.label }}</label>
+                    <div class="rate_site">{{ form.rate_site }}</div>
+                </div>
+
+                <div class="formRate_content">
+                    <label class="rate_contentLabel">{{ form.rate_content.label }}</label>
+                    <div class="rate_content">{{ form.rate_content }}</div>
+                </div>
+
+                <div class="formRate_design">
+                    <label class="rate_designLabel">{{ form.rate_design.label }}</label>
+                    <div class="rate_design">{{ form.rate_design }}</div>
+                </div>
+
+                <div class="formFeedback">
+                    <label class="feedbackLabel">{{ form.feedback.label }}</label>
+                    <div class="feedback">{{ form.feedback }}</div>
+                </div>
+
+                <div class="formSubscribe">
+                    <label class="subscribeLabel">{{ form.subscribe.label }}</label>
+                    <div class="subscribe">{{ form.subscribe }}</div>
+                </div>
+
+                <div class="formNotifications">
+                    <label class="notificationsLabel">{{ form.notifications.label }}</label>
+                    <div class="notifications">{{ form.notifications }}</div>
+                </div>
+
+                <div class="formWishes">
+                    <label class="wishesLabel">{{ form.wishes.label }}</label>
+                    <div class="wishes">{{ form.wishes }}</div>
+                </div>
+
+                <button class="but" type="submit">Отправить</button>
+            </div>
+        </form>
+        
+    {% else %}
+
+        <div class="formData">
+            <p>Спасибо, <span>{{ data.name }}</span> за ваш отзыв!</p>
+            <p>Вы сообщили о себе следующее:</p>
+            <p>Ваша почта: <span>{{ data.email }}</span></p>
+            <p>Ваша оценка сайта: <span>{{ data.rate_site }}</span></p>
+            <p>Ваша оценка контента: <span>{{ data.rate_content }}</span></p>
+            <p>Ваша оценка дизайна: <span>{{ data.rate_design }}</span></p>
+
+            <p>Ваша отзыв: <span>{{ data.feedback }}</span></p>
+
+            <p>Вы подписались на рассылку:
+                {% if data.subscribe %}
+                    Да
+                {% else %}
+                    Нет
+                {% endif %}
+            </p>
+
+            <p>Вы согласились на уведомления:
+                {% if data.notifications %}
+                    Да
+                {% else %}
+                    Нет
+                {% endif %}
+            </p>
+
+            <p>Ваши пожелания для сайта:
+                <span>
+      {% for wish in data.wishes %}
+          {% if wish == 'articles' %}Новые статьи.{% endif %}
+          {% if wish == 'videos' %}Видео.{% endif %}
+          {% if wish == 'live' %}Прямые эфиры.{% endif %}
+          {% if wish == 'projects' %}Новые проекты.{% endif %}
+      {% endfor %}
+    </span>
+            </p>
+
+        </div>
+    {% endif %}
+
+{% endblock %}

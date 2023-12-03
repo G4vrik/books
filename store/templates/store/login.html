@@ -1,0 +1,20 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <h3>Вход</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            {{ form.username }}
+        </div>
+
+        <div>
+            {{ form.password }}
+        </div>
+
+        <div>
+            <button type="submit" class="but">Войти</button>
+        </div>
+
+    </form>
+{% endblock content %}

@@ -1,0 +1,42 @@
+p {
+    color: darkblue;
+}
+
+/*Стили forms*/
+.forms {
+    color: darkblue;
+    background-color: aqua;
+    margin: 0 auto;
+    max-width: 600px;
+    padding-left: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+}
+
+.formData {
+    color: darkblue;
+    background-color: aqua;
+    margin: 0 auto;
+    max-width: 600px;
+    padding-left: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+}
+
+.but {
+    background-color: darkblue;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.but:hover {
+    background-color: #3875d7;
+    color: #ffffff;
+    transition: 0.3s;
+}
